@@ -13,11 +13,13 @@ public class ATM {
         bankDen100 = 10;
     }
 
+
     public ATM(int den20, int den50, int den100) {
         bankDen20 = den20;
         bankDen50 = den50;
         bankDen100 = den100;
     }
+
 
      void plusBanknotes() {
         while(true) {
@@ -38,7 +40,7 @@ public class ATM {
                 bankDen20 += bank20;
                 bankDen50 += bank50;
                 bankDen100 += bank100;
-                System.out.println("Сумма добавлена " + bank20 + " купюрой(-ами) номиналом в 20$, " + bank50 + " купюрой(-ами) номиналом в 50$, " + bank100 + " купюрой(-ами) номиналом в 100$. Остаток суммы, который не удалось внести в банкомат = " + ost + "$.");
+                System.out.println("Сумма добавлена " + bank20 + " купюрой(-ами) номиналом в 20$, " + bank50 + " купюрой(-ами) номиналом в 50$, " + bank100 + " купюрой(-ами) номиналом в 100$. Ос
                 break;
             } else {
                 System.out.println("Вы ввели не числовое значение. Попробуйте еще раз");
@@ -46,6 +48,7 @@ public class ATM {
 
         }
     }
+
 
     boolean minusBanknotes() {
         boolean operation;
@@ -56,6 +59,7 @@ public class ATM {
                 int sum = scanner.nextInt();
                 int summaATM = bankDen20 * 20 + bankDen50 * 50 + bankDen100 * 100;
                 if (sum < summaATM) {
+
                     int bank20, bank50 = 0, bank100, ost;
                     bank100 = sum / 100;
                     if (((sum % 100) / 10) % 2 == 0) {
@@ -70,6 +74,7 @@ public class ATM {
                     bankDen50 -= bank50;
                     bankDen100 -= bank100;
                     System.out.println("Сумма выдана " + bank20 + " купюрой(-ами) номиналом в 20$, " + bank50 + " купюрой(-ами) номиналом в 50$, " + bank100 + " купюрой(-ами) номиналом в 100$. Остаток суммы, который невозможно снять " + ost + "$");
+
                     operation = true;
                     break;
                 } else {
@@ -85,4 +90,6 @@ public class ATM {
         }
         return operation;
     }
+
 }
+

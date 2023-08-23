@@ -20,4 +20,5 @@ public class Task1 {
         card2.infoCard();
         card3.infoCard();
     }
+
 }

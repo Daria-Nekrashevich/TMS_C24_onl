@@ -13,4 +13,5 @@ public class TaskStar {
         atm.plusBanknotes();
         atm.minusBanknotes();
     }
+
 }
