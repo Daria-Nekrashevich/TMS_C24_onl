@@ -8,7 +8,7 @@ public class Dog extends Animal {
 
 
     public void eat(String food) {
-        if (food == "Meat") {
+        if (food.equals("Meat")) {
             System.out.println("Dog likes to eat meat");
         } else {
             System.out.println("Dog doesn't like the food you've offered him");
