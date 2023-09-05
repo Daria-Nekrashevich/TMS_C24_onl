@@ -19,14 +19,12 @@ public class Main {
         System.out.print("The tiger makes a sound = ");
         tiger.voice();
         System.out.println("Enter what you want to feed your tiger: ");
-        Scanner scanner2 = new Scanner(System.in);
-        String str2 = scanner2.nextLine();
+        String str2 = scanner1.nextLine();
         tiger.eat(str2);
         System.out.print("The rabbit makes a sound = ");
         rabbit.voice();
         System.out.println("Enter what you want to feed your rabbit: ");
-        Scanner scanner3 = new Scanner(System.in);
-        String str3 = scanner3.nextLine();
+        String str3 = scanner1.nextLine();
         rabbit.eat(str3);
 
     }
