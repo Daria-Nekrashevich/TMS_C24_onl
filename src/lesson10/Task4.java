@@ -8,28 +8,27 @@ import static lesson10.Task1.generateArray;
 import static lesson10.Task1.printArray;
 
 public class Task4 {
-    public static void main(String[] args) { //пока с ошибками
+    public static void main(String[] args) {
         String[] array = generateArray();
         printArray(array);
-        String buff = new String();
-        String[] words = new String[3];
-        for (int k = 0; k < array.length; k++) {
-            String[] array2 = array[k].split(" ");
-            for (int i = 0; i < array2.length; i++) {
-                for (int j = 0; j < array2[i].length() - 1; j++) {
-                    if (array2[i].charAt(j) != array2[i].charAt(j + 1)) {
-                        buff += array2[i].charAt(j);
-                    } else {
-                        buff = " ";
-                    }
-                    words[k] = buff;
-                    buff = " ";
+        String word = new String();
+        for (int i = 0; i < array.length; i++) {
+            char[] arr = array[i].toCharArray();
+            word += array[i].charAt(0);
+            for (int j = 1; j < arr.length; j++) {
+                int index = word.indexOf(arr[j]);
+                if (index == -1) {
+                    word += arr[j];
+                } else {
+                    word = " ";
+                    break;
                 }
             }
-
+            if (word != " ") {
+                System.out.println("Слово, состоящее только из различных символов: " + word);
+                break;
+            }
         }
-
-        System.out.println(Arrays.deepToString(words));
 
     }
 }
